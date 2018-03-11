@@ -73,11 +73,11 @@
 
   function removeTransition(e) {
     if (e.propertyName !== 'transform') return; //skip it if its not a transform
-    console.log(e.propertyName);
+    this.classList.remove('playing');
   }
 
   const keys = document.querySelectorAll('.key');
-  keys.forEach(key => key.addEventListener('transitioned', removeTransition));
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 </script>
 
 
